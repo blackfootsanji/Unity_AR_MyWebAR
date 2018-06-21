@@ -61,13 +61,13 @@ public class TargetOnTheFly : MonoBehaviour
             GUI.Box(new Rect(Screen.width / 2 - 65, Screen.height / 2, 130, 60), "Photo Saved", skin.GetStyle("Box"));*/
 
 
-		if (GUI.Button (new Rect (Screen.width  - 300, Screen.height - 300, 300, 100), "Take Photo", skin.GetStyle ("Button"))) {
+		if (GUI.Button (new Rect (Screen.width  - 300, Screen.height - 300, 300, 100), "Proccess", skin.GetStyle ("Button"))) {
 			imageCreater.StartTakePhoto();
 			ShowModel = true;
 		}
             
 
-        if (GUI.Button(new Rect(Screen.width - 300, Screen.height - 100, 300, 100), "Clear Targets", skin.GetStyle("Button")))
+        if (GUI.Button(new Rect(Screen.width - 300, Screen.height - 100, 300, 100), "Clear", skin.GetStyle("Button")))
         {
             imageCreater.ClearTexture();
             imageManager.ClearAllTarget();
