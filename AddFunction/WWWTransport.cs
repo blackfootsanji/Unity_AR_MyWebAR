@@ -31,7 +31,7 @@ public class WWWTransport : MonoBehaviour {
 	{     
 
 		//登录请求 POST 把参数写在字典用 通过www类来请求     
-		byte[] tempImage = File.ReadAllBytes(Application.dataPath + "/TempPicture/HandledScreenShot.jpg");
+		byte[] tempImage = File.ReadAllBytes(Application.persistentDataPath + "/TempPicture/HandledScreenShot.jpg");
 
 		StartCoroutine(POSTimageName("http://39.106.27.58:8088/akaze",tempImage));
 
@@ -90,7 +90,7 @@ public class WWWTransport : MonoBehaviour {
 			using(UnityWebRequest www = UnityWebRequest.Get(url + name)){
 				yield return www.SendWebRequest();
 				byte[] data = www.downloadHandler.data;
-				File.WriteAllBytes (Application.dataPath + "/Picture/Mark" + num + ".jpg",data);
+				File.WriteAllBytes (Application.persistentDataPath + "/Picture/Mark" + num + ".jpg",data);
 				num++;
 			}
 		}
